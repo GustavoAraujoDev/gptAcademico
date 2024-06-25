@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      href="https://fonts.cdnfonts.com/css/poppins"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style type="text/css">
+      .u-row {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .u-row .u-col {
+        position: relative;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+      }
+      .u-row .u-col.u-col-100 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      @media (max-width: 767px) {
+        .u-row:not(.no-stack) {
+          flex-wrap: wrap;
+        }
+        .u-row:not(.no-stack) .u-col {
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+      }
+      body,
+      html {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        box-sizing: border-box;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: inherit;
+      }
+      html {
+        font-size: 14px;
+        -ms-overflow-style: scrollbar;
+        -webkit-tap-highlight-color: transparent;
+      }
+      p {
+        margin: 0;
+      }
+      form .error-field {
+        -webkit-animation-name: shake;
+        animation-name: shake;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+      form .error-field input,
+      form .error-field textarea {
+        border-color: #a94442 !important;
+        color: #a94442 !important;
+      }
+      form .field-error {
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        position: absolute;
+        top: -20px;
+        right: 10px;
+      }
+      form .field-error:after {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: #ebcccc;
+        border-width: 5px;
+        margin-left: -5px;
+      }
+      form .spinner {
+        margin: 0 auto;
+        width: 70px;
+        text-align: center;
+      }
+      form .spinner > div {
+        width: 12px;
+        height: 12px;
+        background-color: hsla(0, 0%, 100%, 0.5);
+        margin: 0 2px;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+      form .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      form .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      @-webkit-keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+        }
+      }
+      @keyframes sk-bouncedelay {
+        0%,
+        80%,
+        to {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        40% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+      @-webkit-keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @keyframes shake {
+        0%,
+        to {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0);
+        }
+      }
+      @media (max-width: 480px) {
+        .container {
+          max-width: 100% !important;
+        }
+      }
+      @media (min-width: 481px) and (max-width: 768px) {
+        .hide-tablet {
+          display: none !important;
+        }
+      }
+      .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+      a[onclick] {
+        cursor: pointer;
+      }
+      body {
+        font-family: Poppins, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #fff;
+        background-color: #000;
+      }
+      #u_body a {
+        color: #6b12e4;
+        text-decoration: underline;
+      }
+      #u_body a:hover {
+        color: #3c0883;
+        text-decoration: underline;
+      }
+      #u_content_button_1 a:hover {
+        color: #fff !important;
+        background-color: #00fdeb !important;
+      }
+      #u_content_button_2 a:hover {
+        color: #fff !important;
+        background-color: rgba(22, 32, 195, 0.81) !important;
+      }
+      #u_content_button_10 a:hover {
+        color: #fff !important;
+        background-color: rgba(22, 32, 195, 0.81) !important;
+      }
+      #u_content_button_11 a:hover {
+        color: #fff !important;
+        background-color: rgba(22, 32, 195, 0.81) !important;
+      }
+      #u_content_button_7 a:hover {
+        color: #fff !important;
+        background-color: #3c0883 !important;
+      }
+      #u_content_button_8 a:hover {
+        color: #fff !important;
+        background-color: #3c0883 !important;
+      }
+      #u_content_button_9 a:hover {
+        color: #fff !important;
+        background-color: rgba(22, 32, 195, 0.81) !important;
+      }
+      @media (max-width: 480px) {
+        #u_content_text_54 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_text_54 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_row_1 .v-row-background-image--inner {
+          background-size: cover !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+        }
+        #u_row_1.v-row-background-image--inner {
+          background-size: cover !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+        }
+        #u_row_1 .v-row-background-image--outer {
+          background-image: url(images/123tapronto1708212267481-Design%2Bsem%2Bnome%2B%285%29.png) !important;
+          background-size: cover !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+        }
+        #u_row_1.v-row-background-image--outer {
+          background-image: url(images/123tapronto1708212267481-Design%2Bsem%2Bnome%2B%285%29.png) !important;
+          background-size: cover !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+        }
+        #u_row_1.v-row-padding {
+          padding: 20px 0 50px !important;
+        }
+        #u_content_text_19.v-container-padding-padding {
+          padding: 10px 10px 20px !important;
+        }
+        #u_content_text_19 .v-font-size {
+          font-size: 25px !important;
+        }
+        #u_content_text_19 .v-color {
+          color: #fff !important;
+        }
+        #u_content_text_19 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_custom_my_vsl_1.v-container-padding-padding {
+          padding: 0 10px !important;
+        }
+        #u_content_text_35.v-container-padding-padding {
+          padding: 40px 20px 10px !important;
+        }
+        #u_content_text_35 .v-font-size {
+          font-size: 15px !important;
+        }
+        #u_content_text_35 .v-text-align {
+          text-align: left !important;
+        }
+        #u_content_text_35 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_button_1 .v-button-colors {
+          color: #fff !important;
+          background-color: #00e !important;
+        }
+        #u_content_button_1 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #0d9e9a !important;
+        }
+        #u_content_button_1 .v-size-width {
+          width: auto !important;
+        }
+        #u_content_button_1 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_1 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_button_1 .v-line-height {
+          line-height: 200% !important;
+        }
+        #u_content_button_1 .v-border {
+          border-top: 0 solid transparent !important;
+          border-left: 0 solid transparent !important;
+          border-right: 0 solid transparent !important;
+          border-bottom: 0 solid transparent !important;
+        }
+        #u_column_2 .v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_column_2.v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_content_text_40.v-container-padding-padding {
+          padding: 40px 10px 10px !important;
+        }
+        #u_content_text_40 .v-color {
+          color: rgba(7, 14, 121, 0.9) !important;
+        }
+        #u_content_text_40 .v-line-height {
+          line-height: 130% !important;
+        }
+        #u_content_image_5.v-container-padding-padding {
+          padding: 0 0 0 5px !important;
+        }
+        #u_content_image_10.v-container-padding-padding {
+          padding: 0 0 0 5px !important;
+        }
+        #u_column_11 .v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_column_11.v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_content_text_36.v-container-padding-padding {
+          padding: 0 25px !important;
+        }
+        #u_content_text_36 .v-font-size {
+          font-size: 15px !important;
+        }
+        #u_content_text_36 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_text_36 .v-line-height {
+          line-height: 110% !important;
+        }
+        #u_content_text_37.v-container-padding-padding {
+          padding: 0 !important;
+        }
+        #u_content_text_37 .v-font-size {
+          font-size: 49px !important;
+        }
+        #u_content_text_37 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_text_38.v-container-padding-padding {
+          padding: 0 !important;
+        }
+        #u_content_text_38 .v-font-size {
+          font-size: 10px !important;
+        }
+        #u_content_text_38 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_button_2.v-container-padding-padding {
+          padding: 30px 10px !important;
+        }
+        #u_content_button_2 .v-button-colors {
+          color: #fff !important;
+          background-color: #00e !important;
+        }
+        #u_content_button_2 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #0b0bdd !important;
+        }
+        #u_content_button_2 .v-size-width {
+          width: 83% !important;
+        }
+        #u_content_button_2 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_2 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_button_2 .v-line-height {
+          line-height: 180% !important;
+        }
+        #u_content_image_11.v-container-padding-padding {
+          padding: 0 0 40px !important;
+        }
+        #u_column_15 .v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_column_15.v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_content_text_2.v-container-padding-padding {
+          padding: 10px 20px !important;
+        }
+        #u_content_text_2 .v-line-height {
+          line-height: 110% !important;
+        }
+        #u_content_text_2 a {
+          color: #6b12e4 !important;
+          text-decoration: underline !important;
+        }
+        #u_content_text_2 a:hover {
+          color: #3c0883 !important;
+          background-color: underline !important;
+        }
+        #u_content_button_10.v-container-padding-padding {
+          padding: 30px 10px !important;
+        }
+        #u_content_button_10 .v-button-colors {
+          color: #fff !important;
+          background-color: #00e !important;
+        }
+        #u_content_button_10 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #0b0bdd !important;
+        }
+        #u_content_button_10 .v-size-width {
+          width: 83% !important;
+        }
+        #u_content_button_10 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_10 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_button_10 .v-line-height {
+          line-height: 180% !important;
+        }
+        #u_content_image_17.v-container-padding-padding {
+          padding: 0 !important;
+        }
+        #u_column_16 .v-col-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_column_16.v-col-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_content_text_52.v-container-padding-padding {
+          padding: 50px 10px 23px !important;
+        }
+        #u_content_text_52 .v-color {
+          color: rgba(7, 14, 121, 0.9) !important;
+        }
+        #u_content_text_52 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_text_39.v-container-padding-padding {
+          padding: 25px 10px 10px !important;
+        }
+        #u_content_text_39 .v-color {
+          color: rgba(7, 14, 121, 0.9) !important;
+        }
+        #u_content_text_39 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_video_1.v-container-padding-padding {
+          padding: 20px !important;
+        }
+        #u_content_video_3.v-container-padding-padding {
+          padding: 20px !important;
+        }
+        #u_content_video_5.v-container-padding-padding {
+          padding: 20px !important;
+        }
+        #u_content_video_4.v-container-padding-padding {
+          padding: 20px !important;
+        }
+        #u_content_video_6.v-container-padding-padding {
+          padding: 20px !important;
+        }
+        #u_content_button_11.v-container-padding-padding {
+          padding: 30px 10px !important;
+        }
+        #u_content_button_11 .v-button-colors {
+          color: #fff !important;
+          background-color: #00e !important;
+        }
+        #u_content_button_11 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #0b0bdd !important;
+        }
+        #u_content_button_11 .v-size-width {
+          width: 83% !important;
+        }
+        #u_content_button_11 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_11 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_button_11 .v-line-height {
+          line-height: 180% !important;
+        }
+        #u_content_divider_2.v-container-padding-padding {
+          padding: 0 10px !important;
+        }
+        #u_row_13 .v-row-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_row_13.v-row-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_row_13.v-row-padding {
+          padding: 10px 10px 15px !important;
+        }
+        #u_column_18 .v-col-background-color {
+          background-color: #fff !important;
+        }
+        #u_column_18.v-col-background-color {
+          background-color: #fff !important;
+        }
+        #u_column_18 .v-col-border {
+          border-top: 4px dashed #032f60 !important;
+          border-left: 4px dashed #032f60 !important;
+          border-right: 4px dashed #032f60 !important;
+          border-bottom: 4px dashed #032f60 !important;
+        }
+        #u_content_text_42.v-container-padding-padding {
+          padding: 25px 10px 10px !important;
+        }
+        #u_content_text_42 .v-font-size {
+          font-size: 23px !important;
+        }
+        #u_content_text_42 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_text_43.v-container-padding-padding {
+          padding: 10px 10px 10px 25px !important;
+        }
+        #u_content_text_43 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_text_44.v-container-padding-padding {
+          padding: 10px 10px 0 !important;
+        }
+        #u_content_text_44 .v-font-size {
+          font-size: 18px !important;
+        }
+        #u_content_text_45.v-container-padding-padding {
+          padding: 0 10px !important;
+        }
+        #u_content_text_45 .v-font-size {
+          font-size: 60px !important;
+        }
+        #u_content_text_45 .v-color {
+          color: #101ac3 !important;
+        }
+        #u_content_text_46.v-container-padding-padding {
+          padding: 0 10px 10px !important;
+        }
+        #u_content_text_46 .v-font-size {
+          font-size: 18px !important;
+        }
+        #u_content_text_46 .v-color {
+          color: #101ac3 !important;
+        }
+        #u_content_button_7.v-container-padding-padding {
+          padding: 0 10px 10px !important;
+        }
+        #u_content_button_7 .v-button-colors {
+          color: #fff !important;
+          background-color: #101ac3 !important;
+        }
+        #u_content_button_7 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #3598db !important;
+        }
+        #u_content_button_7 .v-size-width {
+          width: 86% !important;
+        }
+        #u_content_button_7 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_7 .v-font-size {
+          font-size: 18px !important;
+        }
+        #u_content_button_7 .v-line-height {
+          line-height: 200% !important;
+        }
+        #u_row_14 .v-row-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_row_14.v-row-background-color {
+          background-color: #0e1012 !important;
+        }
+        #u_row_14.v-row-padding {
+          padding: 15px 10px 30px !important;
+        }
+        #u_column_19 .v-col-background-color {
+          background-color: #fff !important;
+        }
+        #u_column_19.v-col-background-color {
+          background-color: #fff !important;
+        }
+        #u_column_19 .v-col-border {
+          border-top: 4px dashed #032f60 !important;
+          border-left: 4px dashed #032f60 !important;
+          border-right: 4px dashed #032f60 !important;
+          border-bottom: 4px dashed #032f60 !important;
+        }
+        #u_content_text_47.v-container-padding-padding {
+          padding: 25px 10px 10px !important;
+        }
+        #u_content_text_47 .v-font-size {
+          font-size: 22px !important;
+        }
+        #u_content_text_47 .v-line-height {
+          line-height: 120% !important;
+        }
+        #u_content_text_48.v-container-padding-padding {
+          padding: 10px 10px 10px 25px !important;
+        }
+        #u_content_text_48 .v-font-size {
+          font-size: 14px !important;
+        }
+        #u_content_text_48 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_button_8 .v-button-colors {
+          color: #fff !important;
+          background-color: #000 !important;
+        }
+        #u_content_button_8 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #3598db !important;
+        }
+        #u_content_button_8 .v-size-width {
+          width: 86% !important;
+        }
+        #u_content_button_8 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_8 .v-font-size {
+          font-size: 18px !important;
+        }
+        #u_content_button_8 .v-line-height {
+          line-height: 200% !important;
+        }
+        #u_row_9 .v-row-background-color {
+          background-color: #000 !important;
+        }
+        #u_row_9.v-row-background-color {
+          background-color: #000 !important;
+        }
+        #u_row_9.v-row-padding {
+          padding: 0 !important;
+        }
+        #u_column_13 .v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_column_13.v-col-background-color {
+          background-color: #000 !important;
+        }
+        #u_content_text_53.v-container-padding-padding {
+          padding: 50px 15px 10px 25px !important;
+        }
+        #u_content_text_53 .v-font-size {
+          font-size: 11px !important;
+        }
+        #u_content_text_53 .v-line-height {
+          line-height: 130% !important;
+        }
+        #u_content_button_9.v-container-padding-padding {
+          padding: 5px 10px 30px !important;
+        }
+        #u_content_button_9 .v-button-colors {
+          color: #fff !important;
+          background-color: #00e !important;
+        }
+        #u_content_button_9 .v-button-colors:hover {
+          color: #fff !important;
+          background-color: #0b0bdd !important;
+        }
+        #u_content_button_9 .v-size-width {
+          width: 93% !important;
+        }
+        #u_content_button_9 .v-size-max-width {
+          max-width: 100% !important;
+        }
+        #u_content_button_9 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_button_9 .v-line-height {
+          line-height: 200% !important;
+        }
+        #u_content_button_9 .v-padding {
+          padding: 10px 20px !important;
+        }
+        #u_content_text_32 .v-font-size {
+          font-size: 20px !important;
+        }
+        #u_content_text_33 .v-font-size {
+          font-size: 16px !important;
+        }
+        #u_content_text_33 .v-text-align {
+          text-align: justify !important;
+        }
+        #u_content_text_33 .v-line-height {
+          line-height: 130% !important;
+        }
+        #u_content_text_34.v-container-padding-padding {
+          padding: 40px 10px 10px !important;
+        }
+        #u_content_text_34 .v-font-size {
+          font-size: 9px !important;
+        }
+        #u_content_text_34 .v-text-align {
+          text-align: justify !important;
+        }
+      }
+    </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <script async="" src="js/fbevents.js"></script>
+    <script>
+      const v_123_pageId = "6663973c3ff86be06df53411";
+      const v_123_siteId = "654594cab2268e2380bd93ca";
+      const v_123_siteType = "HTML";
+      const v_123_slug = null;
+    </script>
+
+    <script>
+      const v_123_delayActive = true;
+      const v_123_delayMode = "standard";
+      const v_123_delayPitch = "00:08";
+    </script>
+
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "3293555674269575");
+      fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=3293555674269575&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=AW-16574871643"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-16574871643");
+    </script>
+  </head>
+  <body>
+    <div id="u_body" class="u_body" style="min-height: 100vh">
+      <div
+        id="u_row_15"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #fd0000; padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto; background-color: #000"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_21"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                background-color: #fd0000;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_54"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: inherit;
+                      font-size: 27px;
+                      font-weight: 400;
+                      color: #fff;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%">
+                      <span style="color: #fff; line-height: 19.2px"
+                        ><strong
+                          ><span style="line-height: 19.2px"
+                            >Plataforma de cursos com acesso vitalício�&nbsp;que
+                            já aprovou
+                            <span
+                              style="
+                                line-height: 19.2px;
+                                background-color: #000;
+                                color: #fff;
+                              "
+                              ><span style="line-height: 19.2px"
+                                >mais de
+                              </span></span
+                            ></span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                    <p style="line-height: 120%">
+                      <span style="color: #fff; line-height: 19.2px"
+                        ><strong
+                          ><span style="line-height: 19.2px"
+                            ><span
+                              style="
+                                line-height: 19.2px;
+                                background-color: #000;
+                                color: #fff;
+                              "
+                              ><span style="line-height: 19.2px"
+                                ><span style="line-height: 19.2px"
+                                  >2 mil discentes</span
+                                ></span
+                              > </span
+                            >em todo Brasil.</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_1"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="
+          padding: 20px 0;
+          background-image: url(images/123tapronto1708212531392-Design%2Bsem%2Bnome%2B%285%29.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        "
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row" style="align-items: center">
+            <div
+              id="u_column_1"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                align-items: center;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_html_1"
+                  class="u_content_html v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div>
+                    <style>
+                      .firstcontainer {
+                        height: 100vh;
+                      }
+                      .botao_zoom a {
+                        animation: zoom-in-zoom-out 2s ease-out infinite;
+                      }
+                      @keyframes zoom-in-zoom-out {
+                        0% {
+                          transform: scale(1, 1);
+                        }
+                        50% {
+                          transform: scale(1.1, 1.1);
+                        }
+                        100% {
+                          transform: scale(1, 1);
+                        }
+                      }
+                      .botao_animado a {
+                        animation: 1s ease 0s infinite normal both running
+                          botao_animado_animacao;
+                        transform: translate3d(0, 0, 0);
+                        perspective: 500px;
+                      }
+                      @keyframes botao_animado_animacao {
+                        0%,
+                        100% {
+                          transform: rotate(0);
+                          transform-origin: 50% 100%;
+                        }
+                        0%,
+                        5% {
+                          opacity: 0;
+                        }
+                        10% {
+                          transform: rotate(4deg);
+                          opacity: 1;
+                        }
+                        20%,
+                        40%,
+                        60% {
+                          transform: rotate(-6deg);
+                        }
+                        30%,
+                        50%,
+                        70% {
+                          transform: rotate(6deg);
+                        }
+                        80% {
+                          transform: rotate(-4deg);
+                        }
+                        90% {
+                          transform: rotate(4deg);
+                        }
+                      }
+                    </style>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_3"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0 0 20px"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1701648826802-MAIOR%2BCANAL%2BBRASILEIRO%2BDO%2BCHATGPT%2B%284%29.png"
+                      style="width: 64%; max-width: 64%"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_19"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 41px;
+                      font-weight: 700;
+                      color: #fff;
+                      line-height: 120%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%">
+                      <span style="line-height: 30px"
+                        >A
+                        <span style="color: #f1c40f; line-height: 30px"
+                          >METODOLOGIA CIENTÍFICA</span
+                        >
+                        BASEADA EM INTELIGÊNCIA ARTIFICAL</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_custom_my_vsl_1"
+                  class="u_content_custom_my_vsl v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <style>
+                    .v_123_vsl_destaq {
+                      background: rgba(0, 215, 250, 0.58);
+                      box-shadow: 0 0 55px rgba(0, 215, 250, 0.58);
+                    }
+                  </style>
+                  <div
+                    class="v_123_vsl_destaq"
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      id="v_123_vsl_412657"
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      type="text/html"
+                      width="640"
+                      height="360"
+                      src="https://www.youtube.com/embed/eoTi8-pSeTg?enablejsapi=1&amp;rel=0&amp;showinfo=0&amp;mode=transparent&amp;wmode=transparent&amp;autohide=1&amp;autoplay=1&amp;modestbranding=1&amp;controls=0&amp;disablekb=1"
+                      frameborder="0"
+                      allowfullscreen=""
+                      allowtransparency=""
+                      allow="autoplay"
+                      data-vsl="true"
+                      data-vsltype="youtube"
+                    ></iframe>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_35"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 40px 10px 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 25px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%">
+                      Descubra o passo a passo e todos os comandos necessários
+                      para desenvolver um<span
+                        style="color: #f1c40f; line-height: 18px"
+                        >�&nbsp;<strong>projeto acadêmico</strong></span
+                      >�&nbsp;com <strong>inteligência artificial</strong>,
+                      desde um�&nbsp;<span
+                        style="color: #f1c40f; line-height: 18px"
+                        ><strong>artigo�&nbsp;científico Qualis</strong></span
+                      >�&nbsp;até uma�&nbsp;<span
+                        style="color: #f1c40f; line-height: 18px"
+                        ><strong>tese de doutorado</strong></span
+                      >.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_1"
+                  class="u_content_button botao_zoom v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 30px 10px 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="#bonus_e_preco1"
+                      target="_self"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: auto;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 30px;
+                      "
+                    >
+                      <span style="line-height: 75px"
+                        ><span style="font-size: 20px; line-height: 50px"
+                          ><strong
+                            ><span style="line-height: 75px">QUERO </span
+                            ><span style="line-height: 75px">APRENDER </span
+                            ><span style="line-height: 75px">TUDO</span></strong
+                          ></span
+                        ></span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_2"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #000; padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_2"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                background-color: #000;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_40"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 130%; text-align: center">
+                      <span
+                        style="
+                          color: #fff;
+                          line-height: 36.4px;
+                          font-size: 28px;
+                        "
+                        ><span style="line-height: 36.4px"
+                          ><strong
+                            >QUAIS CURSOS�&nbsp;<span
+                              style="
+                                background-color: #f1c40f;
+                                line-height: 36.4px;
+                              "
+                            >
+                            </span
+                            ><span
+                              style="
+                                background-color: #f1c40f;
+                                line-height: 36.4px;
+                                color: #000;
+                              "
+                              >VOCÊ TERÁ</span
+                            ><span
+                              style="
+                                background-color: #f1c40f;
+                                line-height: 36.4px;
+                              "
+                              ><span style="color: #000; line-height: 36.4px">
+                                ACESSO</span
+                              > </span
+                            ><span style="line-height: 36.4px">�&nbsp;</span
+                            >NESSA PLATAFORMA</strong
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_5"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717803483639-NOVOS%2BCURSOS%2B%284%29.png"
+                      style="width: 100%; max-width: 1414px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_10"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717803513731-NOVOS%2BCURSOS%2B%285%29.png"
+                      style="width: 100%; max-width: 1414px"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_7"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #000; padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto; background-color: #032f60"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_11"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                background-color: #000;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_36"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 25px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 110%">
+                      <span style="color: #fff; line-height: 18.7px"
+                        ><strong
+                          ><span style="line-height: 18.7px"
+                            ><span style="line-height: 18.7px"
+                              >E QUANTO TEMPO DEMORA PARA FAZER TUDO I</span
+                            >SSO?</span
+                          ></strong
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_37"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 70px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <strong
+                        ><span style="line-height: 68.6px; color: #f1c40f"
+                          >48 horas*</span
+                        ></strong
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_38"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 13px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="color: #fff; line-height: 14px"
+                        >*Para um TCC de 40 páginas, por exemplo</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_2"
+                  class="u_content_button botao_zoom v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="#bonus_e_preco1"
+                      target="_self"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 63%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <span style="font-size: 20px; line-height: 50px"
+                        ><strong>Acessar agora!</strong></span
+                      >
+                    </a>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_11"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717811406392-Constru%C3%A7%C3%A3o%2Bcompleta%2Bde%2BIntrodu%C3%A7%C3%A3o%252C%2BObjetivos%252C%2BJustificativa%2Be%2BHip%C3%B3tese%2Bcom%2Bos%2Bcomandos%2Bcient%C3%ADficos%2Bem%2BIA.%2B%282%29.png"
+                      style="width: 100%; max-width: 1200px"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_11"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #000; padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_15"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                background-color: #000;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_2"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px 150px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 110%; text-align: center">
+                      <span style="font-size: 24px; line-height: 26.4px"
+                        ><strong
+                          >ESTÁ
+                          <span style="color: #f1c40f; line-height: 15.4px"
+                            >ENFRENTANDO</span
+                          >
+                          ALGUM DESSES PROBLEMAS:</strong
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_14"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717810720630-%2523032F60%2B%283%29.png"
+                      style="width: 100%; max-width: 853px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_10"
+                  class="u_content_button botao_zoom v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="#bonus_e_preco1"
+                      target="_self"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 63%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <span style="font-size: 18px; line-height: 45px"
+                        ><strong>Quero acessar!</strong></span
+                      >
+                    </a>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_17"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717809570216-Constru%C3%A7%C3%A3o%2Bcompleta%2Bde%2BIntrodu%C3%A7%C3%A3o%252C%2BObjetivos%252C%2BJustificativa%2Be%2BHip%C3%B3tese%2Bcom%2Bos%2Bcomandos%2Bcient%C3%ADficos%2Bem%2BIA..png"
+                      style="width: 100%; max-width: 1200px"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_12"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #0e1012; padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_16"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                background-color: #0e1012;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_52"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%; text-align: center">
+                      <span style="color: #091e67; line-height: 16.8px"
+                        ><span style="font-size: 26px; line-height: 31.2px"
+                          ><strong
+                            ><span style="color: #fff; line-height: 16.8px"
+                              >VEJA A PLATAFORMA</span
+                            >
+                            <span style="color: #f1c40f; line-height: 16.8px"
+                              >DE PERTO</span
+                            ></strong
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_19"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717804592503-Design%2Bsem%2Bnome%2B%283%29.png"
+                      style="width: 100%; max-width: 1080px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_30"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717804860721-Design%2Bsem%2Bnome%2B%284%29.png"
+                      style="width: 100%; max-width: 1080px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_39"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%; text-align: center">
+                      <span style="color: #091e67; line-height: 19.6px"
+                        ><span style="font-size: 24px; line-height: 33.6px"
+                          ><strong
+                            ><span style="color: #fff; line-height: 19.6px"
+                              >VEJA O QUE ESTÃO DIZENDO SOBRE</span
+                            >
+                            <span style="color: #f1c40f; line-height: 19.6px"
+                              >NOSSA METODOLOGIA</span
+                            ></strong
+                          ></span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_video_1"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 20px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="760"
+                      height="427.5"
+                      src="https://www.youtube.com/embed/WZKN5Iw90Tc"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+                <div
+                  id="u_content_video_3"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 20px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="760"
+                      height="427.5"
+                      src="https://www.youtube.com/embed/hJMTv7rYACE"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+                <div
+                  id="u_content_video_5"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 20px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="760"
+                      height="427.5"
+                      src="https://www.youtube.com/embed/TJB9c5UFapU"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+                <div
+                  id="u_content_video_4"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 20px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="760"
+                      height="427.5"
+                      src="https://www.youtube.com/embed/g1FTIJlRAdA"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+                <div
+                  id="u_content_video_6"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 20px"
+                >
+                  <div
+                    style="
+                      position: relative;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    "
+                  >
+                    <iframe
+                      style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                      "
+                      width="760"
+                      height="427.5"
+                      src="https://www.youtube.com/embed/aaWjzrSfcEM"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen=""
+                    ></iframe>
+                  </div>
+                </div>
+                <a name="bonus_e_preco"></a>
+                <div
+                  id="u_content_image_21"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717810883961-Design%2Bsem%2Bnome%2B%2810%29.png"
+                      style="width: 100%; max-width: 1080px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_29"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717810866873-Design%2Bsem%2Bnome%2B%289%29.png"
+                      style="width: 100%; max-width: 1080px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_11"
+                  class="u_content_button botao_zoom v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="#bonus_e_preco1"
+                      target="_self"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 63%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <span style="font-size: 18px; line-height: 45px"
+                        ><strong>Entrar agora!</strong></span
+                      >
+                    </a>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_26"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717810980344-%2523032F60%2B%284%29.png"
+                      style="width: 100%; max-width: 853px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_divider_2"
+                  class="u_content_divider v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <a name="bonus_e_preco1"></a>
+                <div
+                  id="u_content_image_24"
+                  class="u_content_image v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1717812148274-Inserir%2Bum%2Bt%C3%ADtulo%2B%282%29.png"
+                      style="width: 100%; max-width: 1080px"
+                      title=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_13"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #0e1012; padding: 50px 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto; background-color: #fff"
+        >
+          <div class="u-row" style="align-items: center">
+            <div
+              id="u_column_18"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                align-items: center;
+                border-top: 4px dashed #032f60;
+                border-left: 4px dashed #032f60;
+                border-right: 4px dashed #032f60;
+                border-bottom: 4px dashed #032f60;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_42"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 38px;
+                      font-weight: 700;
+                      color: #d92955;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%">
+                      <span style="line-height: 27.6px"
+                        ><span style="color: #f1c40f; line-height: 27.6px"
+                          >CURSO
+                          <span style="color: #032f60; line-height: 27.6px"
+                            >COMPLETO</span
+                          ></span
+                        ></span
+                      ><span style="color: #032f60; line-height: 27.6px"
+                        >: Pesquisa científica com IA</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_43"
+                  class="u_content_text v-container-padding-padding"
+                  style="
+                    overflow-wrap: break-word;
+                    padding: 10px 10px 10px 80px;
+                  "
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 20px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="line-height: 19.6px; color: #000"
+                        ><span
+                          style="
+                            background-color: #000;
+                            line-height: 19.6px;
+                            color: #fff;
+                          "
+                          ><strong>1 -</strong></span
+                        >
+                        Acesso completo �&nbsp; plataforma de cursos.</span
+                      >
+                    </p>
+                    <p style="line-height: 140%">�&nbsp;</p>
+                    <p style="line-height: 140%">
+                      <strong
+                        ><span style="line-height: 19.6px; color: #000"
+                          ><span
+                            style="
+                              background-color: #000;
+                              line-height: 19.6px;
+                              color: #fff;
+                            "
+                            >2-</span
+                          >
+                        </span></strong
+                      ><span style="line-height: 19.6px; color: #000"
+                        >Acesso imediato aos 17 cursos já disponíveis.</span
+                      >
+                    </p>
+                    <p style="line-height: 140%">�&nbsp;</p>
+                    <p style="line-height: 140%">
+                      <span style="line-height: 19.6px; color: #000"
+                        ><strong
+                          ><span
+                            style="
+                              background-color: #000;
+                              line-height: 19.6px;
+                              color: #fff;
+                            "
+                            >3-</span
+                          > </strong
+                        >Acesso vitalício e com direito gratuito �&nbsp;s
+                        futuras atualizações.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_44"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 18px;
+                      font-weight: 400;
+                      color: #000;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="line-height: 25.2px">POR APENAS 12x DE</span>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_45"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 72px;
+                      font-weight: 700;
+                      color: #032f60;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="line-height: 84px">R$ 28,50</span>
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_46"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 22px;
+                      font-weight: 700;
+                      color: #032f60;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="line-height: 25.2px"
+                        >ou R$ 286,50 �&nbsp; vista</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_7"
+                  class="u_content_button botao_animado v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="https://pay.hotmart.com/Q93486817L?off=9asgkeuh&amp;checkoutMode=10"
+                      target="_blank"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 50%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <strong
+                        ><span style="line-height: 65px"
+                          >COMPRAR AGORA</span
+                        ></strong
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_14"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #0e1012; padding: 50px 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto; background-color: #fff"
+        >
+          <div class="u-row" style="align-items: center">
+            <div
+              id="u_column_19"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                align-items: center;
+                border-top: 4px dashed #032f60;
+                border-left: 4px dashed #032f60;
+                border-right: 4px dashed #032f60;
+                border-bottom: 4px dashed #032f60;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_47"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 38px;
+                      font-weight: 700;
+                      color: #d92955;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 120%">
+                      <span style="color: #f1c40f; line-height: 26.4px"
+                        ><span style="color: #032f60; line-height: 26.4px"
+                          >PROGRAMA DE</span
+                        >
+                        PRODUÇÃO ACADÊMICA</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_48"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      <span style="color: #000; line-height: 19.6px"
+                        >Receba assessoria completa na escrita da sua pesquisa.
+                        Nós da GPT Acadêmico podemos de ajudar a evoluir
+                        rapidamente e com qualidade.</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_8"
+                  class="u_content_button botao_animado v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="https://forms.gle/AUzWDzWSSh2unies6"
+                      target="_blank"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #00e;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 50%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <strong
+                        ><span style="line-height: 36px"
+                          >QUERO O SERVIÇO</span
+                        ></strong
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_9"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: #000; padding: 50px 0 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_13"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_image_23"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 0"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1701652861702-Ol%C3%A1%252C%2Bmeu%2Bnome%2B%C3%A9%2BRamon%2BBarreto%2B%282%29.png"
+                      style="width: 100%; max-width: 540px"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_53"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-size: 14px;
+                      line-height: 140%;
+                      text-align: left;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 130%">
+                      Sou Engenheiro Mecânico formado pela Universidade Estadual
+                      de Santa Cruz.
+                    </p>
+                    <p style="line-height: 130%">�&nbsp;</p>
+                    <p style="line-height: 130%">
+                      Sou especialista em Inteligência Artificial e atualmente
+                      administro um dos maiores canais de inteligência no
+                      Brasil, o @chatgpt.brasil, com mais de 50 mil seguidores
+                      do TikTok, mais de 180 mil seguidores no Facebook e
+                      atuação no YouTube. Através desse canal, exponho
+                      conhecimentos e curiosidades importantes do ChatGPT e
+                      outras IAs para diversas áreas do mercado, garantindo que
+                      os profissionais de cada área melhorem significativamente
+                      sua produtividade.
+                    </p>
+                    <p style="line-height: 130%">�&nbsp;</p>
+                    <p style="line-height: 130%">
+                      Administro a empresa GPT Acadêmico e, com mais de 15
+                      colaboradores, pudemos desenvolver uma metodologia
+                      científica baseada em inteligência artificial para a
+                      produção eficiente de projetos acadêmicos. Já contribuímos
+                      para a aprovação de mais de 2 MIL discentes, desde a
+                      graduação até o doutorado.
+                    </p>
+                    <p style="line-height: 130%">�&nbsp;</p>
+                    <p style="line-height: 130%">
+                      Além disso, através do ChatGPT, pude evoluir no mercado,
+                      obtendo diversas parcerias. Atualmente, sou embaixador do
+                      ZapGPT, uma startup que conecta a inteligência do
+                      WhatsApp. Também sou social media em uma empresa de
+                      conteúdo acadêmico chamada ResumosEngMec, responsável por
+                      todo o criativo, copy e identidade visual, e faço tudo via
+                      IA. Esse pequeno empreendimento me fornece uma porcentagem
+                      de todo o lucro do negócio.
+                    </p>
+                    <p style="line-height: 130%">�&nbsp;</p>
+                    <p style="line-height: 130%">
+                      Meu TCC foi sobre a construção de um software de gestão de
+                      manutenção em uma indústria de vidros no sul da Bahia.
+                      Iniciei o projeto em 2022, desenvolvendo o aplicativo, e
+                      com a chegada do ChatGPT e a contribuição dessa
+                      inteligência na programação avançada, pude melhorá-lo
+                      significativamente, promovendo atualizações de
+                      funcionalidades que antes eu não sabia fazer. Também
+                      preparei toda a estrutura do TCC, o que me permitiu
+                      alcançar uma nota 10 na escolha do tema e em todo o
+                      projeto.
+                    </p>
+                    <p style="line-height: 130%">�&nbsp;</p>
+                    <p style="line-height: 130%">
+                      Se quiser me conhecer ainda mais e tirar qualquer tipo de
+                      dúvida, pode me encontrar clicando no botão abaixo.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_button_9"
+                  class="u_content_button botao_zoom v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div class="v-text-align" style="text-align: center">
+                    <a
+                      href="https://ramonbarreto.com.br/"
+                      target="_blank"
+                      class="v-size-width v-line-height v-padding v-button-colors v-border v-font-size"
+                      style="
+                        color: #fff;
+                        background-color: #12898d;
+                        border-radius: 15px;
+                        line-height: 250%;
+                        display: inline-block;
+                        text-decoration: none;
+                        text-align: center;
+                        padding: 10px 20px;
+                        width: 63%;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        font-size: 26px;
+                      "
+                    >
+                      <span style="font-size: 14px; line-height: 28px"
+                        ><strong
+                          ><span style="line-height: 32px"
+                            >QUERO CONHECER VOCÊ, RAMON</span
+                          ></strong
+                        ></span
+                      >
+                    </a>
+                  </div>
+                </div>
+                <div
+                  id="u_content_divider_1"
+                  class="u_content_divider v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px 70px"
+                >
+                  <div style="text-align: center; line-height: 0">
+                    <div
+                      style="
+                        border-top-width: 1px;
+                        border-top-style: solid;
+                        border-top-color: #bbb;
+                        width: 100%;
+                        display: inline-block;
+                        line-height: 1px;
+                        height: 0;
+                        vertical-align: middle;
+                      "
+                    ></div>
+                  </div>
+                </div>
+                <div
+                  id="u_content_image_2"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-text-align"
+                    style="
+                      position: relative;
+                      line-height: 0;
+                      text-align: center;
+                    "
+                  >
+                    <img
+                      alt=""
+                      src="images/123tapronto1674586761014-07-dias-1.png"
+                      style="width: 23%; max-width: 23%"
+                      title=""
+                    />
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_32"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 26px;
+                      font-weight: 700;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      TESTE POR
+                      <span style="color: #f1c40f; line-height: 36.4px"
+                        >7 DIAS</span
+                      >
+                      SEM RISCO!
+                    </p>
+                  </div>
+                </div>
+                <div
+                  id="u_content_text_33"
+                  class="delay v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Montserrat, sans-serif;
+                      font-size: 18px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 130%">
+                      O código de defesa consumidor (Art. 49)
+                      <span style="color: #f1c40f; line-height: 20.8px"
+                        >garante 7 dias para solicitar reembolso</span
+                      >
+                      em caso de insatisfação com o produto. Nós confiamos tanto
+                      em nossos estudos e pesquisas que lhe garantimos esses 7
+                      dias de garantia incondicional, sem hesitar!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="u_row_10"
+        class="u_row v-row-padding v-row-background-image--outer v-row-background-color"
+        style="background-color: rgba(0, 0, 0, 0.8); padding: 0"
+      >
+        <div
+          class="container v-row-background-image--inner"
+          style="max-width: 800px; margin: 0 auto"
+        >
+          <div class="u-row">
+            <div
+              id="u_column_14"
+              class="u-col u-col-100 u_column v-col-background-color"
+              style="
+                display: flex;
+                border-top: 0 solid transparent;
+                border-left: 0 solid transparent;
+                border-right: 0 solid transparent;
+                border-bottom: 0 solid transparent;
+                border-radius: 0;
+              "
+            >
+              <div style="width: 100%; padding: 0">
+                <div
+                  id="u_content_text_34"
+                  class="u_content_text v-container-padding-padding"
+                  style="overflow-wrap: break-word; padding: 10px"
+                >
+                  <div
+                    class="v-color v-text-align v-line-height v-font-size"
+                    style="
+                      font-family: Poppins, sans-serif;
+                      font-size: 12px;
+                      line-height: 140%;
+                      text-align: center;
+                      word-wrap: break-word;
+                    "
+                  >
+                    <p style="line-height: 140%">
+                      Este site não é afiliado ao Facebook ou a qualquer
+                      entidade do Facebook. Depois que você sair do Facebook, a
+                      responsabilidade não é deles e sim do nosso site. Fazemos
+                      todos os esforços para indicar claramente e mostrar todas
+                      as provas do produto e usamos resultados reais. Nós não
+                      vendemos o seu e-mail ou qualquer informação para
+                      terceiros. Jamais fazemos nenhum tipo de spam. Se você
+                      tiver alguma dúvida, sinta-se �&nbsp; vontade para usar o
+                      link de contato e falar conosco em horário comercial de
+                      Segunda a Sextas das 09h00 ás 18h00. Lemos e respondemos
+                      todas as mensagens por ordem de chegada.
+                    </p>
+                    <p style="line-height: 140%">�&nbsp;</p>
+                    <p style="line-height: 140%">CNPJ: 52.968.590/0001-44</p>
+                    <p style="line-height: 140%">�&nbsp;</p>
+                    <p style="line-height: 140%"><br />Copyright © 2023</p>
+                    <p style="line-height: 140%">
+                      Todos os direitos reservados.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .delay {
+        display: none;
+      }
+    </style>
+
+    <script async="true" src="js/googletagmanager_helper.js"></script>
+    <script async="true" src="js/googletagmanager.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <a
+      href="https://api.whatsapp.com/send?phone=5511974338779&amp;text=Olá, vim do site GPT Acadêmico e desejo comprar o método de produção acadêmica baseada em inteligência artificial."
+      target="_blank"
+      style="position: fixed; bottom: 20px; right: 30px; z-index: 99999"
+    >
+      <svg
+        class="atrasado"
+        enable-background="new 0 0 512 512"
+        width="50"
+        height="50"
+        version="1.1"
+        viewBox="0 0 512 512"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z"
+          fill="#4CAF50"
+        ></path>
+        <path
+          d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z"
+          fill="#FAFAFA"
+        ></path></svg
+    ></a>
+  </body>
+</html>
